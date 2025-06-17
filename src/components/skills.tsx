@@ -107,10 +107,11 @@ export default function Skills() {
     icon,
     size,
   }: {
-    icon: React.FC<IconProps>;
+    icon: React.FC<typeof IconProps>;
     size: number;
   }) => {
-    return <icon size={size} />;
+    const IconComponent = icon;
+    return <IconComponent size={size} />;
   };
 
   return (

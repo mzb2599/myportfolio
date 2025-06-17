@@ -1,60 +1,69 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState, useEffect, useRef } from "react"
-import { Mail, Phone, MapPin, Github, Linkedin, ExternalLink, Send } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { useState, useEffect, useRef } from "react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Github,
+  Linkedin,
+  ExternalLink,
+  Send,
+} from "lucide-react";
 
 export default function Contact() {
-  const [isVisible, setIsVisible] = useState(false)
+  const [isVisible, setIsVisible] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     subject: "",
     message: "",
-  })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const sectionRef = useRef<HTMLElement>(null)
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true)
+          setIsVisible(true);
         }
       },
-      { threshold: 0.3 },
-    )
+      { threshold: 0.3 }
+    );
 
     if (sectionRef.current) {
-      observer.observe(sectionRef.current)
+      observer.observe(sectionRef.current);
     }
 
-    return () => observer.disconnect()
-  }, [])
+    return () => observer.disconnect();
+  }, []);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
-    })
-  }
+    });
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
+    e.preventDefault();
+    setIsSubmitting(true);
 
     // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 2000))
+    await new Promise((resolve) => setTimeout(resolve, 2000));
 
     // Reset form
-    setFormData({ name: "", email: "", subject: "", message: "" })
-    setIsSubmitting(false)
+    setFormData({ name: "", email: "", subject: "", message: "" });
+    setIsSubmitting(false);
 
     // Show success message (you can implement a toast notification here)
-    alert("Message sent successfully!")
-  }
+    alert("Message sent successfully!");
+  };
 
   const contactInfo = [
     {
@@ -75,7 +84,7 @@ export default function Contact() {
       value: "Pune, Maharashtra, India",
       href: "#",
     },
-  ]
+  ];
 
   const socialLinks = [
     {
@@ -96,13 +105,15 @@ export default function Contact() {
       href: "https://medium.com/@mzaki2599",
       color: "hover:text-green-400",
     },
-  ]
+  ];
 
   return (
     <section ref={sectionRef} id="contact" className="py-20 bg-slate-800/30">
       <div className="container mx-auto px-6">
         <div
-          className={`transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+          className={`transition-all duration-1000 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          }`}
         >
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
@@ -110,8 +121,8 @@ export default function Contact() {
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-purple-400 to-pink-400 mx-auto rounded-full" />
             <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
-              I'm always open to discussing new opportunities, interesting projects, or just having a chat about
-              technology.
+              I'm always open to discussing new opportunities, interesting
+              projects, or just having a chat about technology.
             </p>
           </div>
 
@@ -119,10 +130,13 @@ export default function Contact() {
             {/* Contact Information */}
             <div className="space-y-8">
               <div>
-                <h3 className="text-2xl font-bold text-white mb-6">Let's Connect</h3>
+                <h3 className="text-2xl font-bold text-white mb-6">
+                  Let's Connect
+                </h3>
                 <p className="text-gray-300 leading-relaxed mb-8">
-                  Whether you have a project in mind, want to collaborate, or just want to say hello, I'd love to hear
-                  from you. Feel free to reach out through any of the channels below.
+                  Whether you have a project in mind, want to collaborate, or
+                  just want to say hello, I'd love to hear from you. Feel free
+                  to reach out through any of the channels below.
                 </p>
               </div>
 
@@ -150,7 +164,9 @@ export default function Contact() {
 
               {/* Social Links */}
               <div>
-                <h4 className="text-lg font-semibold text-white mb-4">Follow Me</h4>
+                <h4 className="text-lg font-semibold text-white mb-4">
+                  Follow Me
+                </h4>
                 <div className="flex gap-4">
                   {socialLinks.map((social, index) => (
                     <a
@@ -170,12 +186,17 @@ export default function Contact() {
 
             {/* Contact Form */}
             <div className="bg-slate-800/50 rounded-xl p-8 backdrop-blur-sm border border-slate-700/50">
-              <h3 className="text-2xl font-bold text-white mb-6">Send a Message</h3>
+              <h3 className="text-2xl font-bold text-white mb-6">
+                Send a Message
+              </h3>
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+                    <label
+                      htmlFor="name"
+                      className="block text-sm font-medium text-gray-300 mb-2"
+                    >
                       Name
                     </label>
                     <input
@@ -190,7 +211,10 @@ export default function Contact() {
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+                    <label
+                      htmlFor="email"
+                      className="block text-sm font-medium text-gray-300 mb-2"
+                    >
                       Email
                     </label>
                     <input
@@ -207,7 +231,10 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-gray-300 mb-2">
+                  <label
+                    htmlFor="subject"
+                    className="block text-sm font-medium text-gray-300 mb-2"
+                  >
                     Subject
                   </label>
                   <input
@@ -223,7 +250,10 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-medium text-gray-300 mb-2"
+                  >
                     Message
                   </label>
                   <textarea
@@ -238,10 +268,10 @@ export default function Contact() {
                   />
                 </div>
 
-                <Button
+                <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-3 rounded-lg transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                  className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none font-medium"
                 >
                   {isSubmitting ? (
                     <div className="flex items-center justify-center gap-2">
@@ -254,12 +284,12 @@ export default function Contact() {
                       Send Message
                     </div>
                   )}
-                </Button>
+                </button>
               </form>
             </div>
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }
