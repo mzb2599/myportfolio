@@ -56,13 +56,21 @@ export default function Contact() {
 
     // Simulate form submission
     await new Promise((resolve) => setTimeout(resolve, 2000));
+    const response = await fetch("https://formspree.io/f/xgvyzolb", {
+      method: "POST",
+      body: JSON.stringify(formData),
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+    });
 
-    // Reset form
-    setFormData({ name: "", email: "", subject: "", message: "" });
-    setIsSubmitting(false);
-
-    // Show success message (you can implement a toast notification here)
-    alert("Message sent successfully!");
+    if (response.ok) {
+      setStatus("Thanks for your message!");
+      form.reset();
+    } else {
+      setStatus("Oops! Something went wrong.");
+    }
   };
 
   const contactInfo = [
@@ -270,10 +278,11 @@ export default function Contact() {
 
                 <button
                   type="submit"
-                  disabled={isSubmitting}
+                  disabled={true}
                   className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none font-medium"
                 >
-                  {isSubmitting ? (
+                  Dev in progress....
+                  {/* {isSubmitting ? (
                     <div className="flex items-center justify-center gap-2">
                       <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                       Sending...
@@ -283,7 +292,7 @@ export default function Contact() {
                       <Send size={18} />
                       Send Message
                     </div>
-                  )}
+                  )} */}
                 </button>
               </form>
             </div>
