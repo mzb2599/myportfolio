@@ -86,7 +86,7 @@ export default function Hero() {
               className="border border-purple-400 text-purple-400 hover:bg-purple-400 hover:text-white px-8 py-3 rounded-full transition-all duration-300 font-medium"
               onClick={() =>
                 window.open(
-                  "https://drive.google.com/file/d/1EUcMumaoZ0xXXsRzCTtRRdDVKCJVLZMD/view?usp=drivesdk",
+                  "https://drive.google.com/file/d/1Ezrv2obZg6jNOzmm_Dw56qJaDyFP2QPF/view?usp=sharing",
                   "_blank"
                 )
               }
