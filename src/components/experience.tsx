@@ -33,6 +33,7 @@ export default function Experience() {
       period: "June 2022 - Present",
       type: "Full-time",
       achievements: [
+        "Currently, I am working on a React.js mobile-based application for the WeChat team at Apple (via Infosys), where I contribute to building and enhancing features for an international product used by millions. This role has sharpened my ability to develop high-performance applications and collaborate effectively across distributed teams",
         "Led cloud migration project from Oracle to Microsoft Azure SQL Server, resulting in 25% improvement in database performance",
         "Developed React applications with dynamic visualizations using storybook framework",
         "Created automation test cases using Microsoft Playwright framework",
@@ -68,6 +69,7 @@ export default function Experience() {
       period: "February 2021 - April 2021",
       type: "Internship",
       achievements: [
+        "Currently, I am working on a React.js mobile-based application for the WeChat team at Apple (via Infosys),where I contribute to building and enhancing features for an international product used  by millions. This role has sharpened my ability to develop high-performance applications and  collaborate effectively across distributed teams",
         "Maintained and updated React-based website for Microsoft client",
         "Improved website performance and user engagement",
         "Optimized website for search engines, resulting in 15% increase in organic traffic",
