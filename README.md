@@ -8,7 +8,7 @@ This portfolio highlights my professional experience, projects, certifications, 
 
 ## 🚀 About Me
 
-I am a **Full Stack Developer (MERN)** with 3+ years of experience in:
+I am a **Full Stack Developer (MERN)** with 3.5+ years of experience in:
 
 * Building **scalable web applications** and **AI-driven solutions**
 * Leading **cloud migrations** and **performance optimizations**
