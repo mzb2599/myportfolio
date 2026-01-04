@@ -3,7 +3,10 @@ name: Deploy Vite React App to GitHub Pages
 on:
   push:
     branches:
-      - master
+      - master  # 👈 Your main branch
+
+permissions:
+  contents: write  # ✅ This line is CRITICAL — gives the bot permission to push
 
 jobs:
   build-and-deploy:
