@@ -41,6 +41,13 @@ export default function Education() {
 
   const certifications = [
     {
+      title: "Generative AI Leader",
+      issuer: "Google",
+      year: "2025",
+      category: "Generative AI",
+      level: "Professional",
+    },
+    {
       title: "Infosys Certified Frontend React Web Developer",
       issuer: "Infosys",
       year: "2025",
@@ -120,6 +127,14 @@ export default function Education() {
   ];
 
   const awards = [
+    {
+      title: "SAMURAI AWARD",
+      issuer: "Infosys",
+      date: "August 2025",
+      description:
+        "Honored for outstanding contribution in developing the STG Unit Dashboard at Infosys, used by thousands of users across the unit",
+      type: "Excellence Award",
+    },
     {
       title: "INSTA AWARD",
       issuer: "Infosys",
