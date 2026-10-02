@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none">
+  <defs>
+    <linearGradient id="background" x1="40" y1="40" x2="360" y2="360" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#312e81"/>
+      <stop offset="1" stop-color="#be185d"/>
+    </linearGradient>
+  </defs>
+  <circle cx="200" cy="200" r="200" fill="url(#background)"/>
+  <circle cx="200" cy="200" r="174" stroke="#f8fafc" stroke-opacity=".24" stroke-width="2"/>
+  <text x="200" y="222" fill="#fff" font-family="Georgia,serif" font-size="112" font-weight="600" text-anchor="middle" dominant-baseline="middle">MZ</text>
+</svg>
