@@ -22,6 +22,7 @@ export default function Contact() {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [status, setStatus] = useState("");
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -31,7 +32,7 @@ export default function Contact() {
           setIsVisible(true);
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.3 },
     );
 
     if (sectionRef.current) {
@@ -42,7 +43,7 @@ export default function Contact() {
   }, []);
 
   const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     setFormData({
       ...formData,
@@ -53,23 +54,33 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setStatus("");
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-    const response = await fetch("https://formspree.io/f/xgvyzolb", {
-      method: "POST",
-      body: JSON.stringify(formData),
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-    });
+    try {
+      const response = await fetch("https://formspree.io/f/xgvyzolb", {
+        method: "POST",
+        body: JSON.stringify(formData),
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      });
 
-    if (response.ok) {
-      setStatus("Thanks for your message!");
-      form.reset();
-    } else {
-      setStatus("Oops! Something went wrong.");
+      if (response.ok) {
+        setStatus("Thanks for your message! I will get back to you soon.");
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+        });
+      } else {
+        setStatus("Oops! Something went wrong. Please try again later.");
+      }
+    } catch (error) {
+      setStatus("Network error. Please try again or contact me directly.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -278,11 +289,10 @@ export default function Contact() {
 
                 <button
                   type="submit"
-                  disabled={true}
+                  disabled={isSubmitting}
                   className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none font-medium"
                 >
-                  Dev in progress....
-                  {/* {isSubmitting ? (
+                  {isSubmitting ? (
                     <div className="flex items-center justify-center gap-2">
                       <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                       Sending...
@@ -292,8 +302,14 @@ export default function Contact() {
                       <Send size={18} />
                       Send Message
                     </div>
-                  )} */}
+                  )}
                 </button>
+
+                {status && (
+                  <p className="mt-4 text-sm text-center text-purple-300">
+                    {status}
+                  </p>
+                )}
               </form>
             </div>
           </div>
