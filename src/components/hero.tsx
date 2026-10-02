@@ -51,10 +51,10 @@ export default function Hero() {
               </div>
             </div>
             <h1 className="text-5xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-white via-purple-200 to-pink-200 bg-clip-text text-transparent">
-              Mohammed Zaki
+              Mohammed Zaki Aliraza Bhojani
             </h1>
             <h2 className="text-2xl md:text-3xl font-light mb-6 text-gray-300">
-              Aliraza Bhojani
+              Full Stack Developer
             </h2>
           </div>
 
@@ -87,7 +87,7 @@ export default function Hero() {
               onClick={() =>
                 window.open(
                   "https://drive.google.com/file/d/1Ezrv2obZg6jNOzmm_Dw56qJaDyFP2QPF/view?usp=sharing",
-                  "_blank"
+                  "_blank",
                 )
               }
             >

@@ -59,7 +59,9 @@ export default function Footer() {
                 <span className="text-white font-bold text-lg">MZ</span>
               </div>
               <div>
-                <h3 className="text-xl font-bold text-white">Mohammed Zaki</h3>
+                <h3 className="text-xl font-bold text-white">
+                  Mohammed Zaki Aliraza Bhojani
+                </h3>
                 <p className="text-gray-400 text-sm">Full Stack Developer</p>
               </div>
             </div>
@@ -77,6 +79,7 @@ export default function Footer() {
               {quickLinks.map((link) => (
                 <button
                   key={link.name}
+                  type="button"
                   onClick={() => scrollToSection(link.href)}
                   className="text-gray-400 hover:text-purple-400 transition-colors duration-300 text-left text-sm"
                 >
@@ -119,13 +122,19 @@ export default function Footer() {
             <p className="text-gray-400 text-sm flex items-center gap-1">
               © {currentYear} Mohammed Zaki Aliraza Bhojani. Made with
               <Heart size={14} className="text-red-400 fill-current" />
-              using React & Next.js
+              using React & Vite
             </p>
             <div className="flex gap-6 text-sm text-gray-400">
-              <button className="hover:text-purple-400 transition-colors duration-300">
+              <button
+                type="button"
+                className="hover:text-purple-400 transition-colors duration-300"
+              >
                 Privacy Policy
               </button>
-              <button className="hover:text-purple-400 transition-colors duration-300">
+              <button
+                type="button"
+                className="hover:text-purple-400 transition-colors duration-300"
+              >
                 Terms of Service
               </button>
             </div>

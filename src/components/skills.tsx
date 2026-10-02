@@ -3,8 +3,15 @@
 import type React from "react";
 
 import { useState, useEffect, useRef } from "react";
-import { Code, Server, Cloud, Database, Wrench, Brain } from "lucide-react";
-import type { ProportionsIcon as IconProps } from "lucide-react";
+import {
+  Code,
+  Server,
+  Cloud,
+  Database,
+  Wrench,
+  Brain,
+  type LucideIcon,
+} from "lucide-react";
 
 export default function Skills() {
   const [isVisible, setIsVisible] = useState(false);
@@ -18,7 +25,7 @@ export default function Skills() {
           setIsVisible(true);
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.3 },
     );
 
     if (sectionRef.current) {
@@ -103,13 +110,7 @@ export default function Skills() {
 
   const ActiveCategoryIcon = skillCategories[activeCategory].icon;
 
-  const IconWithSize = ({
-    icon,
-    size,
-  }: {
-    icon: React.FC<typeof IconProps>;
-    size: number;
-  }) => {
+  const IconWithSize = ({ icon, size }: { icon: LucideIcon; size: number }) => {
     const IconComponent = icon;
     return <IconComponent size={size} />;
   };

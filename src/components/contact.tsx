@@ -109,7 +109,7 @@ export default function Contact() {
       icon: MapPin,
       label: "Location",
       value: "Pune, Maharashtra, India",
-      href: "#",
+      href: "https://maps.google.com/?q=Pune,+Maharashtra,+India",
     },
   ];
 
@@ -173,6 +173,13 @@ export default function Contact() {
                   <a
                     key={info.label}
                     href={info.href}
+                    target={info.href.startsWith("http") ? "_blank" : undefined}
+                    rel={
+                      info.href.startsWith("http")
+                        ? "noopener noreferrer"
+                        : undefined
+                    }
+                    aria-label={info.label}
                     className={`flex items-center gap-4 p-4 bg-slate-800/50 rounded-xl backdrop-blur-sm border border-slate-700/50 hover:border-purple-500/50 transition-all duration-300 transform hover:scale-105 ${
                       isVisible ? "animate-fade-in-up" : ""
                     }`}
@@ -201,6 +208,7 @@ export default function Contact() {
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
+                      aria-label={social.label}
                       className={`p-3 bg-slate-800/50 rounded-lg text-gray-400 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 ${social.color}`}
                       style={{ animationDelay: `${index * 100}ms` }}
                     >
