@@ -56,7 +56,7 @@ export default function Contact() {
     setIsSubmitting(true);
     setStatus("");
 
-    const formspreeEndpoint = import.meta.env.VITE_FORMSPREE_ENDPOINT;
+    const formspreeEndpoint = process.env.VITE_FORMSPREE_ENDPOINT;
 
     if (!formspreeEndpoint) {
       setStatus("Form not configured. Please set VITE_FORMSPREE_ENDPOINT.");
