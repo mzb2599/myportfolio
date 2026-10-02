@@ -4,9 +4,6 @@ Source code for my personal portfolio: **https://mzb2599.github.io/myportfolio/*
 
 I'm a full-stack engineer (React, TypeScript, Node.js) with 4+ years of experience building data-heavy web apps and LLM-powered tools. This site collects my projects, experience and writing in one place.
 
-<!-- TODO: add a screenshot. Save it as public/screenshot.png (1200x630 works well) and keep the line below. -->
-![Portfolio preview](public/screenshot.png)
-
 ## What's on the site
 
 - **Hero and quick links:** who I am, what I build, and direct links to my resume, email and LinkedIn
