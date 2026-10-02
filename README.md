@@ -1,93 +1,88 @@
-# 🌐 Mohammed Zaki Bhojani – Portfolio Website
+# Mohammed Zaki Bhojani | Portfolio
 
-Welcome to the repository of my **portfolio website**, built to showcase my journey as a **Full Stack Developer (MERN)** with expertise in **cloud, AI-driven solutions, and scalable applications**.
+Source code for my personal portfolio: **https://mzb2599.github.io/myportfolio/**
 
-This portfolio highlights my professional experience, projects, certifications, and technical skills while providing an interactive way to connect with me.
+I'm a full-stack engineer (React, TypeScript, Node.js) with 4+ years of experience building data-heavy web apps and LLM-powered tools. This site collects my projects, experience and writing in one place.
 
----
+## What's on the site
 
-## 🚀 About Me
+- **Hero and quick links:** who I am, what I build, and direct links to my resume, email and LinkedIn
+- **Projects:** short case studies covering the problem, my approach and the result
+- **Experience:** roles and measurable outcomes
+- **Skills, certifications and awards**
+- **Writing:** links to my articles on [Medium](https://medium.com/@mzaki2599)
 
-I am a **Full Stack Developer (MERN)** with 3.5+ years of experience in:
+<!-- TODO: edit this list so it matches the sections that actually exist on the live site. -->
 
-* Building **scalable web applications** and **AI-driven solutions**
-* Leading **cloud migrations** and **performance optimizations**
-* Designing impactful **dashboards** and **mobile-first applications**
+## Featured projects
 
-Currently, I am working at **Infosys** as a **Specialist Programmer**, contributing to international products (e.g., Apple WeChat team) and internal enterprise solutions.
+| Project | What it does | Stack |
+|---|---|---|
+| **Document Intelligence Dashboard** | Upload documents and ask questions in plain English. Extracts structured insights with LLMs and a chat interface. | React, Azure, LLM APIs |
+| **AI Agent Studio** | Multi-agent system that automates document analysis, with specialised agents coordinating over REST APIs. | LangChain, Python, REST |
+| **Customer Insights Dashboard** | Interactive dashboard with filtering, credit lock, reporting and email notifications. | React, Node.js, Express, MongoDB |
+| **Nahjul Balagha AI App** | Summarises sermons using NLP and generative AI. | React, TypeScript, GenAI |
 
-📍 Pune, India | ✉️ [Email](mailto:mohammedzakibhojani@gmail.com) | 🔗 [LinkedIn](https://www.linkedin.com/in/mzakibhojani) | 🖥️ [GitHub](https://github.com/mzb2599)
+<!-- TODO: link each project to its repo or live demo, e.g. [Demo](...) · [Code](...) -->
+<!-- TODO: add one result per project (users, time saved, accuracy) where you can defend the number. -->
 
----
+## Tech stack
 
-## 🛠️ Tech Stack
+**This site:** React, Vite, Tailwind CSS, ESLint, deployed with GitHub Actions to GitHub Pages
+<!-- TODO: confirm TypeScript is used in src/ and add it here if so. -->
 
-* **Frontend:** React.js, HTML5, CSS3, Bootstrap, Semantic UI, Storybook, React Testing Library
-* **Backend:** Node.js, Express.js, MongoDB, PostgreSQL, Python
-* **Cloud & DevOps:** Microsoft Azure, GitHub Actions, CI/CD Pipelines
-* **Data & ETL:** SQL, Informatica PowerCenter
-* **AI/ML:** Generative AI, Prompt Engineering, Playwright Testing, Computer Vision
+**What I work with day to day**
 
----
+| Area | Tools |
+|---|---|
+| Frontend | React, TypeScript, HTML5, CSS3, Tailwind, Storybook, React Testing Library |
+| Backend | Node.js, Express, REST APIs, Microservices, MongoDB, PostgreSQL, Python |
+| AI | Generative AI, LangChain, Prompt Engineering, Computer Vision |
+| Cloud and DevOps | Azure, AWS (EC2, S3, Lambda), Azure Pipelines, GitHub Actions |
+| Testing | Playwright, Jest, React Testing Library |
 
-## 📂 Features of the Portfolio
+## Run it locally
 
-* Clean, responsive UI with **React.js**
-* Dynamic project showcase with live demos & descriptions
-* Highlighted skills and certifications for recruiters & collaborators
-* Integrated links to GitHub, LinkedIn, and Medium blogs
+Requires Node.js 18 or later.
 
----
+```bash
+git clone https://github.com/mzb2599/myportfolio.git
+cd myportfolio
+npm install
+npm run dev
+```
 
-## 💼 Projects Highlighted
+Vite serves the site at `http://localhost:5173`. Because the site is hosted under `/myportfolio/`, make sure `base: '/myportfolio/'` is set in `vite.config.js`.
 
-* **Customer Insights Dashboard** – Filtering, credit lock, reporting & email notifications
-* **Real-time Chat Application** – Built with React.js, Firebase, Chatengine.io (boosted engagement by 40%)
-* **Face Mask Detection System** – AI-driven system with 95% accuracy using MobileNet V2
-* **Python Voice Search Assistant** – Reduced search time by 30% with API integrations
+Other scripts:
 
----
+```bash
+npm run build     # production build into dist/
+npm run preview   # serve the production build locally
+npm run lint      # run ESLint
+```
 
-## 📜 Certifications
+## Deployment
 
-* Infosys Certified Frontend React Developer (2025)
-* Infosys Certified Node Developer (2022)
-* Google Generative AI Leader (2025)
-* Infosys Certified Generative AI Developer (2023)
-* Infosys Certified Agile Developer (2024)
+Pushes to `master` trigger the workflow in `.github/workflows/`, which builds the site and publishes it to GitHub Pages.
 
----
+## Project structure
 
-## ⚙️ Installation & Setup
+```
+├── .github/workflows/   # CI/CD for GitHub Pages
+├── public/              # static assets (images, resume PDF)
+├── src/                 # components, sections, styles
+├── index.html           # entry HTML (meta tags, Open Graph)
+├── tailwind.config.ts
+└── vite.config.js
+```
 
-1. Clone the repository:
+## Contact
 
-   ```bash
-   git clone https://github.com/mzb2599/portfolio-website.git
-   cd portfolio-website
-   ```
-2. Install dependencies:
+I'm open to full-stack, frontend and AI-focused roles at product teams and startups.
 
-   ```bash
-   npm install
-   ```
-3. Run the development server:
-
-   ```bash
-   npm start
-   ```
-4. Open [http://localhost:3000](http://localhost:3000) in your browser.
-
----
-
-## 📬 Contact
-
-For collaborations or opportunities, reach out at:
-
-* 📧 Email: [mohammedzakibhojani@gmail.com](mailto:mohammedzakibhojani@gmail.com)
-* 🔗 LinkedIn: [linkedin.com/in/mzakibhojani](https://www.linkedin.com/in/mzakibhojani)
-* 🖥️ GitHub: [github.com/mzb2599](https://github.com/mzb2599)
-
----
-
-✨ Built with passion for **technology, problem-solving, and AI-driven innovation**.
+- Email: [mohammedzakibhojani@gmail.com](mailto:mohammedzakibhojani@gmail.com)
+- LinkedIn: [linkedin.com/in/mzakibhojani](https://www.linkedin.com/in/mzakibhojani)
+- GitHub: [github.com/mzb2599](https://github.com/mzb2599)
+- Medium: [medium.com/@mzaki2599](https://medium.com/@mzaki2599)
+- Location: Pune, India
