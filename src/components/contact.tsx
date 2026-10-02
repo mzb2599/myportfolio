@@ -56,8 +56,16 @@ export default function Contact() {
     setIsSubmitting(true);
     setStatus("");
 
+    const formspreeEndpoint = import.meta.env.VITE_FORMSPREE_ENDPOINT;
+
+    if (!formspreeEndpoint) {
+      setStatus("Form not configured. Please set VITE_FORMSPREE_ENDPOINT.");
+      setIsSubmitting(false);
+      return;
+    }
+
     try {
-      const response = await fetch("https://formspree.io/f/xgvyzolb", {
+      const response = await fetch(formspreeEndpoint, {
         method: "POST",
         body: JSON.stringify(formData),
         headers: {
