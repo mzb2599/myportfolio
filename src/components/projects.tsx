@@ -1,120 +1,109 @@
-"use client"
+"use client";
 
-import { useState, useEffect, useRef } from "react"
-import { ExternalLink, Github, Calendar, Zap } from "lucide-react"
+import { useState, useEffect, useRef } from "react";
+import { ExternalLink, Github, Calendar, Zap } from "lucide-react";
 
 export default function Projects() {
-  const [isVisible, setIsVisible] = useState(false)
-  const [hoveredProject, setHoveredProject] = useState<number | null>(null)
-  const sectionRef = useRef<HTMLElement>(null)
+  const [isVisible, setIsVisible] = useState(false);
+  const [hoveredProject, setHoveredProject] = useState<number | null>(null);
+  const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true)
+          setIsVisible(true);
         }
       },
       { threshold: 0.3 },
-    )
+    );
 
     if (sectionRef.current) {
-      observer.observe(sectionRef.current)
+      observer.observe(sectionRef.current);
     }
 
-    return () => observer.disconnect()
-  }, [])
+    return () => observer.disconnect();
+  }, []);
 
   const projects = [
     {
       title: "Customer Insights Dashboard",
+      repo: "https://github.com/mzb2599/5s-Auto",
       description:
-        "Comprehensive dashboard for managing customer and order data with advanced analytics and reporting features.",
+        "Business intelligence dashboard for customer operations, reporting, and data-driven workflow management.",
       longDescription:
-        "Developed and maintained a comprehensive customer insights dashboard to manage customer and order data efficiently. Implemented functionalities such as adding, updating, and filtering customer data, and locking customers based on credit limits.",
-      technologies: ["React.js", "Node.js", "PostgreSQL", "Chart.js", "Express.js"],
-      features: [
-        "Real-time customer data management",
-        "Advanced filtering and search capabilities",
-        "Credit limit monitoring and alerts",
-        "Monthly/ad-hoc reporting system",
-        "Email notification integration",
+        "Developed a data-heavy operational dashboard with interactive charts, reporting workflows, map-based insights, and export features for business users. The app is built around reusable React components and scalable frontend architecture for enterprise reporting use cases.",
+      technologies: [
+        "React.js",
+        "React Router",
+        "Material UI",
+        "ECharts",
+        "React Leaflet",
+        "jsPDF",
+        "Node.js",
       ],
-      metrics: {
-        users: "500+",
-        performance: "40% faster",
-        accuracy: "99.5%",
-      },
+      features: [
+        "Interactive dashboards and chart-based reporting",
+        "Map and Geospatial visualization for operational data",
+        "PDF, CSV, and document export workflows",
+        "Reusable component-driven frontend architecture",
+        "Date-based management and business data filters",
+      ],
       status: "In Production",
-      period: "July 2024 - Present",
+      period: "2024 - Present",
     },
     {
-      title: "Real-time Chat Application",
+      title: "Nahjul Balagha",
+      repo: "https://github.com/mzb2599/Nahjul-Balagha",
       description:
-        "Modern chat application with real-time messaging, user authentication, and seamless communication features.",
+        "AI-powered document search and Q&A experience for Nahjul Balagha using retrieval-augmented generation.",
       longDescription:
-        "Developed a real-time chat application using React.js, chatengine.io, and Firebase for authentication. Enabled seamless communication between users, resulting in a 40% increase in user engagement.",
-      technologies: ["React.js", "Firebase", "ChatEngine.io", "WebSocket", "CSS3"],
-      features: [
-        "Real-time messaging",
-        "User authentication with Firebase",
-        "Group chat functionality",
-        "Message history and search",
-        "Responsive design for all devices",
+        "Built a RAG-based application that ingests a PDF, chunks the content, stores vector embeddings in Qdrant, and answers user questions using Gemini. The project combines a FastAPI backend with a modern frontend for an interactive, knowledge-driven reading experience.",
+      technologies: [
+        "Python",
+        "FastAPI",
+        "RAG",
+        "Qdrant",
+        "Gemini API",
+        "React.js",
+        "TypeScript",
       ],
-      metrics: {
-        users: "1000+",
-        engagement: "+40%",
-        uptime: "99.9%",
-      },
+      features: [
+        "PDF ingestion and semantic chunking",
+        "Vector search with Qdrant for relevant passages",
+        "Gemini-powered question answering over source text",
+        "Private local API setup with secure environment config",
+        "Responsive reading interface for exploring Islamic text",
+      ],
       status: "Completed",
-      period: "2023",
+      period: "2025",
     },
     {
-      title: "Face Mask Detection System",
+      title: "Choice",
+      repo: "https://github.com/mzb2599/Choice",
       description:
-        "AI-powered real-time face mask detection system with email automation for public health and safety.",
+        "Retail and customer management app with product workflows, bulk updates, and improved mobile usability.",
       longDescription:
-        "Developed a real-time face mask detection system using the Mobilenet V2 model and ReLU activation function. Pre-processed a dataset of people wearing and not wearing masks, leading to a 95% accuracy rate.",
-      technologies: ["Python", "TensorFlow", "OpenCV", "MobileNet V2", "SMTP"],
-      features: [
-        "95% accuracy in face mask detection",
-        "Real-time video processing",
-        "Automated email alerts for violations",
-        "Dataset preprocessing and training",
-        "Integration with security systems",
+        "Designed and built a full customer/product management workflow for retail operations using React Native, Expo, and an Express + MongoDB backend. The app includes customer handling, product updates, reset flows, and UX refinements focused on smoother day-to-day operations.",
+      technologies: [
+        "React Native",
+        "Expo",
+        "JavaScript",
+        "Express.js",
+        "MongoDB",
+        "Node.js",
       ],
-      metrics: {
-        accuracy: "95%",
-        speed: "Real-time",
-        alerts: "Automated",
-      },
-      status: "Completed",
-      period: "2021",
-    },
-    {
-      title: "Python Search Assistant",
-      description:
-        "Intelligent search assistant with voice recognition and API integration for enhanced user experience.",
-      longDescription:
-        "Created a Python script with default and voice typing features for enhanced user experience. Integrated Wolfram Alpha and Wikipedia APIs to provide concise and informative summaries on any topic.",
-      technologies: ["Python", "Speech Recognition", "Wolfram Alpha API", "Wikipedia API", "NLP"],
       features: [
-        "Voice command recognition",
-        "Text and voice input support",
-        "Wolfram Alpha integration",
-        "Wikipedia API integration",
-        "Intelligent search optimization",
+        "Customer and product management workflows",
+        "Bulk update and backend sync features",
+        "Responsive mobile-first user experience",
+        "Password reset and auth-related flows",
+        "Improved empty states and input handling",
       ],
-      metrics: {
-        efficiency: "+30%",
-        accuracy: "90%",
-        response: "<2s",
-      },
       status: "Completed",
-      period: "2022",
+      period: "2023 - 2024",
     },
-  ]
+  ];
 
   return (
     <section ref={sectionRef} id="projects" className="py-20 relative">
@@ -128,8 +117,8 @@ export default function Projects() {
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-purple-400 to-pink-400 mx-auto rounded-full" />
             <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
-              A showcase of my recent work, demonstrating expertise in full-stack development, AI/ML, and cloud
-              technologies.
+              Selected work spanning enterprise dashboards, AI-powered search,
+              and product-focused applications built for real-world use.
             </p>
           </div>
 
@@ -168,29 +157,31 @@ export default function Projects() {
                       </div>
                     </div>
                     <div className="flex gap-2">
-                      <button className="p-2 hover:bg-purple-600/20 rounded-lg transition-colors duration-300">
+                      <a
+                        href={project.repo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`View ${project.title} on GitHub`}
+                        className="p-2 hover:bg-purple-600/20 rounded-lg transition-colors duration-300"
+                      >
                         <Github size={16} />
-                      </button>
-                      <button className="p-2 hover:bg-purple-600/20 rounded-lg transition-colors duration-300">
+                      </a>
+                      <a
+                        href={project.repo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`Open ${project.title}`}
+                        className="p-2 hover:bg-purple-600/20 rounded-lg transition-colors duration-300"
+                      >
                         <ExternalLink size={16} />
-                      </button>
+                      </a>
                     </div>
                   </div>
                   <p className="text-gray-300 text-sm leading-relaxed">
-                    {hoveredProject === index ? project.longDescription : project.description}
+                    {hoveredProject === index
+                      ? project.longDescription
+                      : project.description}
                   </p>
-                </div>
-
-                {/* Project Metrics */}
-                <div className="px-6 py-4 bg-slate-900/30">
-                  <div className="grid grid-cols-3 gap-4">
-                    {Object.entries(project.metrics).map(([key, value]) => (
-                      <div key={key} className="text-center">
-                        <div className="text-lg font-bold text-purple-400">{value}</div>
-                        <div className="text-xs text-gray-400 capitalize">{key}</div>
-                      </div>
-                    ))}
-                  </div>
                 </div>
 
                 {/* Technologies */}
@@ -209,13 +200,20 @@ export default function Projects() {
                   {/* Features - Show on hover */}
                   <div
                     className={`transition-all duration-300 overflow-hidden ${
-                      hoveredProject === index ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+                      hoveredProject === index
+                        ? "max-h-96 opacity-100"
+                        : "max-h-0 opacity-0"
                     }`}
                   >
-                    <h4 className="text-sm font-semibold text-white mb-2">Key Features:</h4>
+                    <h4 className="text-sm font-semibold text-white mb-2">
+                      Key Features:
+                    </h4>
                     <ul className="space-y-1">
                       {project.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="text-xs text-gray-400 flex items-center gap-2">
+                        <li
+                          key={featureIndex}
+                          className="text-xs text-gray-400 flex items-center gap-2"
+                        >
                           <Zap size={12} className="text-purple-400" />
                           {feature}
                         </li>
@@ -236,5 +234,5 @@ export default function Projects() {
         </div>
       </div>
     </section>
-  )
+  );
 }

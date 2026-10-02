@@ -8,10 +8,9 @@ export default function Hero() {
   const [currentRole, setCurrentRole] = useState(0);
 
   const roles = [
-    "Full Stack Developer",
-    "React Specialist",
-    "Cloud Engineer",
-    "AI Enthusiast",
+    "React & TypeScript Engineer",
+    "MERN Stack Developer",
+    "Generative AI Engineer",
   ];
 
   useEffect(() => {
